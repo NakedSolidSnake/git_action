@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: install dependencies
-      run: apt install cppcheck valgrind
+      run: sudo apt install cppcheck valgrind
     - name: check statically
       run: cppcheck src
     - name: configure
