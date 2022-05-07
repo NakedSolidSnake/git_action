@@ -13,9 +13,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: install dependencies
+      run: apt install cppcheck valgrind
+    - name: check statically
+      run: cppcheck src
     - name: configure
       run: cmake .
     - name: make
       run: make
     - name: make test
       run: make test
+    - name: check leaks
+      run: valgrind --leak-check=full bin/hello 

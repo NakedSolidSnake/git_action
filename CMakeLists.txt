@@ -8,5 +8,5 @@ set(CMAKE_BUILD_TYPE Debug)
 
 enable_testing()
 
-add_executable(hello main.c)
+add_executable(hello src/main.c)
 add_test(NAME test_hello COMMAND hello)
